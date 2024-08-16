@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h1>Update your Details</h1>
+
+    <form method="post" action="/lists/<%=currentUserData.id %>?_method=put" enctype="multipart/form-data">
+        <div class="mb-3">
+            <lable for="title" class="form-label">Title</lable>
+            <input  value="<%=currentUserData.title%>"  type="text" placeholder="Title" name="Listing[title]" class="form-control">
+            </div>
+            
+            <div  class="mb-3">
+                <label for="description" class="form-label">Description</label>
+            <textarea type="text" class="form-control" placeholder="add description.." name="Listing[description]"><%=currentUserData.description%></textarea>
+            </div>
+            
+            <div  class="mb-3">
+            <label for="price" class="form-label">Price</label>
+                <input value="<%=currentUserData.price%>" type="text" placeholder="Price" name="Listing[price]" class="form-control">
+            </div>
+
+            <div  class="mb-3">
+                <h6>Original Listing Image</h6>
+                <img  src="<%=originalImageUrl%>"  alt="">
+            </div>
+
+            <div  class="mb-3">
+                <label for="image_url" class="form-label">Upload New Image</label>
+                    <input type="file"  id="image_url"   name="Listing[image]" class="form-control" >
+            </div>
+           
+            <div class="row">
+                <div  class="mb-3 col-md-4">
+                    <lable for="location" class="form-label">Location</lable>
+                <input type="text" placeholder="Location" name="Listing[location]" value="<%=currentUserData.location%>" class="form-control">
+                </div>
+    
+                <div  class="mb-3 col-md-8">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" placeholder="Country" name="Listing[country]" class="form-control" value="<%=currentUserData.country%>">
+                
+                </div>
+    
+            </div>
+    
+            <button class="btn mb-3 btn-dark add-btn">Update</button>
+    </form>
+    
+</body>
