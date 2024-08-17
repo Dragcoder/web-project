@@ -93,7 +93,7 @@ app.use((req,res,next)=>{
 })
 
 
-app.use("/lists",listsRouter); // it is use to show DATA--
+app.use("/",listsRouter); // it is use to show DATA--
 
 app.use("/lists/:id/reviews",reviewRouter); // it is working on review (Add,delete)- 
                                         // here :id is params-- this will not send to review file so for this use mergParams:true;
@@ -102,9 +102,9 @@ app.use("/",userRouter);
 
 
 
-// app.all("*",(req,res,next)=>{
-//     next(new ExpressError(404,"Page not found"));
-// })
+app.all("*",(req,res,next)=>{
+    next(new ExpressError(404,"Page not found"));
+})
 
 
 //Error handling--
