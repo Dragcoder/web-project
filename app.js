@@ -5,7 +5,7 @@ if(process.env.MODE_ENV !="production"){
 }
 
 
-
+const port="0000";
 const express=require("express");
 const app=express();
 const mongoose=require("mongoose");
@@ -116,6 +116,6 @@ app.use((err,req,res,next)=>{
 })
 
 
-app.listen("8080",(req,res)=>{
+app.listen(port,(req,res)=>{
     console.log("server is ready to listen on port 8080 ...");
 })
