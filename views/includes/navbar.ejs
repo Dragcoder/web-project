@@ -54,15 +54,15 @@
 
         <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/lists/newlist">Add list</a>
-          <% if(!currentUser){ %>
+         
             <a class="nav-link active" href="/signup"><b>Sign up</b></a>
             <a class="nav-link" href="/login"><b>Log in</b></a>
-          <%}%>
-          <% if(currentUser){ %>
+        
+         
           <a class="nav-link" href="/logout">Logout</a>
           <a class="nav-link user-name" ><%=currentUser.username%></a>
           
-          <%}%>
+         
 
           
          
