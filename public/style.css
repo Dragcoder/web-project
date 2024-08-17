@@ -1,0 +1,148 @@
+body{
+    background-color: aqua;
+    font-family: "Roboto", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1; 
+}
+
+
+.navbar, .navbar-nav{
+    height: auto;
+    background-color: white;
+}
+
+.user-name{
+    border: 0.18rem solid #fe424d !important;
+    border-radius: 5rem !important;
+    padding: 0.4rem 0.8rem 0rem 0.8rem !important;
+    
+   
+}
+.fa-compass{
+    color:red;
+    font-size: 2rem;
+}
+.nav-link{
+    color:black !important;
+}
+
+.f-info-links,.f-info-socials,.f-web-name{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.btn-size{
+    width: 100% !important;
+}
+
+.add-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+   
+    font-weight: 600 !important;
+}
+
+.f-info-socials a{
+    font-size: 1.4rem;
+    margin-left:1.5rem ;
+    color: black;
+   
+}
+
+.f-info-socials a:hover{
+   
+    color: rgb(9, 118, 186);
+   
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+    &:hover{
+        text-decoration: underline;
+    }
+  
+}
+
+.f-info{
+
+    position: relative;
+    top:100%;  
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    text-align: center;
+    align-items: center;
+    height: 7rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+
+}
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+
+}
+.card-body{
+    padding: 0 !important;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    
+}
+
+.card-img-overlay{
+    opacity: 0;
+    
+}
+
+.card-img-overlay:hover{
+    opacity:0.15;
+    background-color: white;
+}
+
+.detail-section-img{
+    height: 30vh;
+}
+
+.detail-btns{
+    display: flex !important;
+    margin: 10px !important;
+    justify-content: center;
+}
+
+#map{
+    width:100%;
+    height:40vh;
+}
+
+.filters{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+
+@media(max-width: 529px){
+  .filters{
+    display: none !important;
+  }
+}
