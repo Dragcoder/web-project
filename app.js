@@ -5,7 +5,6 @@ if(process.env.MODE_ENV !="production"){
 }
 
 
-const port="10000";
 const express=require("express");
 const app=express();
 const mongoose=require("mongoose");
@@ -116,6 +115,6 @@ app.use((err,req,res,next)=>{
 })
 
 
-app.listen(port,(req,res)=>{
-    console.log("server is ready to listen on port 10000 ...");
+app.listen("0000",(req,res)=>{
+    console.log("server is ready to listen ...");
 })
