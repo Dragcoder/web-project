@@ -117,5 +117,5 @@ app.use((err,req,res,next)=>{
 
 
 app.listen(port,(req,res)=>{
-    console.log("server is ready to listen on port 8080 ...");
+    console.log("server is ready to listen on port 10000 ...");
 })
