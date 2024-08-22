@@ -1,0 +1,123 @@
+<% layout("/layouts/boilerplate") %>
+        <style>
+
+            .filters{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-evenly;
+
+            }
+
+            .filter{
+                text-align: center;
+                margin-right: 2rem;
+                margin-top: 1rem;
+                opacity: 0.8;
+            }
+            .filter:hover{
+                opacity: 1;
+                cursor: pointer;
+            }
+            .filter p{
+                font-size: 0.8rem;
+            }
+            .tax-info{
+                display: none;
+            }
+            .tax-toggle{
+                border: 1px solid black;
+                border-radius: 1rem;
+                height: 3rem;
+                padding: 0.8rem;
+            }
+            .filter .filter-mountains{
+                text-decoration: none;
+                color: black;
+                opacity: 0.8;
+            }
+
+
+        </style> 
+        <!-- <h1>All Listing</h1> -->
+         <div class="filters">
+            <div class="filter">
+                <i class="fa-solid fa-fire"></i>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <i class="fa-solid fa-bed"></i>                
+                <p>Rooms</p>
+            </div>
+            <div class="filter">
+                <i class="fa-solid fa-mountain-city"></i>
+                <p>Iconic Cities</p>
+            </div>
+            <div class="filter">
+                <a class="filter-mountains" href="/lists/mountains"> <i class="fa-solid fa-mountain" ></i> </a>
+                <p>Mountains</p>
+            </div>
+            <div class="filter">
+                <i class="fa-brands fa-fort-awesome"></i>                
+                <p>Castles</p>
+            </div>
+            <div class="filter">
+                <i class="fa-solid fa-person-swimming"></i>
+                <p>Amazing Pools</p>
+            </div>
+            <div class="filter">
+                <i class="fa-solid fa-campground"></i>
+                <p>Camping</p>
+            </div>
+            <div class="filter">
+                <i class="fa-solid fa-cow"></i>           
+                <p>Farms</p>
+            </div>
+            <div class="filter">
+                <i class="fa-solid fa-snowflake"></i>
+                <p>Arctic </p>
+            </div>
+            <div class="tax-toggle">
+                <div class="form-check form-switch form-check-reverse">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes </label>
+                  </div>
+            </div>
+         </div>
+        <div class="row row-cols-lg-3 row-cols-md-2  row-cols-sm-1 mt-3">
+            <%for(data of allData){%>
+
+                <a href="/lists/<%= data.id%>" style="text-decoration: none;">
+                    <div class="card listing-card" >
+                    <img src="<%= data.image.url%>" class="card-img-top" alt="listingImage" style="height: 20rem;" >
+                    
+                    <div class="card-img-overlay"><%=data.title%></div>
+                    <div class="card-body">
+
+                    <p class="card-text">
+                        <h4><%=data.title %></h4>
+                        <p> &#8377; <%=data.price%><i class="tax-info"> &nbsp; +18% GST</i></p>
+                        
+                    </p>
+                    </div>
+                    </div>
+                </a>
+              <%}%>
+
+        </div>
+       
+<script>
+    let taxSwitch=document.getElementById("flexSwitchCheckDefault");
+    taxSwitch.addEventListener("click",()=>{
+        let taxInfo=document.getElementsByClassName("tax-info");
+       for(info of taxInfo){
+        if(info.style.display !="inline"){
+            info.style.display="inline";
+        }
+      
+       else{
+        info.style.display="none";
+       }
+    }});
+
+</script>
